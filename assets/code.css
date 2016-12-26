@@ -1,0 +1,20 @@
+.kw0, .operator {
+  color: #747474;
+}
+.identifier {
+  color: #4d4d4d;
+}
+.kw1, .regex, .command-substitution, .template-expr {
+  color: black;
+}
+.kw2, .open-square, .close-square, .open-curly, .close-curly,
+.area-comment, .area-comment-continue, .line-comment {
+  color: black;
+}
+.number, .quote, .single-quote, .double-quote, .char,
+.template-string, .heredoc {
+  color: #8e8e8e;
+}
+.directive, .shebang, .variable {
+  color: #7c7c7c;
+}
