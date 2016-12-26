@@ -8,6 +8,11 @@
     "build": "bankai build -O",
     "test": "standard && dependency-check . --unused --no-dev -i tachyons"
   },
+  "browserify": {
+    "transform": [
+      "brfs"
+    ]
+  },
   "dependencies": {
     "choo": "^4.0.0",
     "choo-log": "^3.0.0",
@@ -15,6 +20,7 @@
   },
   "devDependencies": {
     "bankai": "^5.1.3",
+    "brfs": "^1.4.3",
     "dependency-check": "^2.6.0",
     "standard": "^8.6.0"
   }
