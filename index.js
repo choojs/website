@@ -1,3 +1,5 @@
+var jsSyntax = require('highlight-syntax/js')
+var Highlight = require('highlight-syntax')
 var mount = require('choo/mount')
 var html = require('choo/html')
 var log = require('choo-log')
@@ -6,8 +8,11 @@ var choo = require('choo')
 var path = require('path')
 var fs = require('fs')
 
+var highlight = Highlight([ jsSyntax ])
+
 ;css('tachyons')
 ;css('vhs/css/vhs.min.css')
+;css('highlight-syntax/light.css')
 var bodyStyles = css`:host { background-color: pink }`
 
 var app = choo()
@@ -70,12 +75,18 @@ function Example () {
         </h2>
       </header>
       <div class="fn fl-l w-60-l">
-        <pre class="lh-copy measure-wide-l mt0-ns db bg-white pa3 pa4-l mv0 overflow-auto"><code>${
-          fs.readFileSync(path.join(__dirname, 'assets/example.js'), 'utf8')
-        }</code></pre>
+        <pre class="lh-copy measure-wide-l mt0-ns db bg-white pa3 pa4-l mv0 overflow-auto">${
+          toHtml(highlight(fs.readFileSync(path.join(__dirname, 'assets/example.js'), 'utf8'), { lang: 'js' }))
+        }</pre>
       </div>
     </article>
   `
+
+  function toHtml (str) {
+    var el = html`<div></div>`
+    el.innerHTML = str
+    return el.children[0]
+  }
 }
 
 function Description () {
@@ -174,7 +185,12 @@ function Footer () {
         </div>
         <div class="fl-ns w-100 w-20-l pr3-m pr4-l b">
           <a class="black link" href="https://github.com/yoshuawuyts/choo">
-            Visit GitHub
+            Choo on GitHub
+          </a>
+        </div>
+        <div class="fl-ns w-100 w-20-l pr3-m pr4-l b">
+          <a class="black link" href="https://github.com/yoshuawuyts/choo-website">
+            View source
           </a>
         </div>
       </div>
