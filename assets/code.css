@@ -1,20 +1,21 @@
 .kw0, .operator {
-  color: #747474;
+  color: #fff;
 }
 .identifier {
-  color: #4d4d4d;
+  color: #fff;
 }
 .kw1, .regex, .command-substitution, .template-expr {
-  color: black;
+  color: #fff;
 }
 .kw2, .open-square, .close-square, .open-curly, .close-curly,
-.area-comment, .area-comment-continue, .line-comment {
-  color: black;
+.area-comment, .area-comment-continue, .line-comment,
+.open-paren, .close-paren {
+  color: #ffc0cb;
 }
 .number, .quote, .single-quote, .double-quote, .char,
 .template-string, .heredoc {
-  color: #8e8e8e;
+  color: rgb(205, 236, 255);
 }
 .directive, .shebang, .variable {
-  color: #7c7c7c;
+  color: #cdecff;
 }

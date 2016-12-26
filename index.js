@@ -13,7 +13,7 @@ var highlight = Highlight([ jsSyntax ])
 ;css('tachyons')
 ;css('vhs/css/vhs.min.css')
 ;css('./assets/code.css')
-var bodyStyles = css`:host { background-color: pink }`
+var bodyStyles = css`:host { background-color: #ffc0cb }`
 
 var app = choo()
 app.use(log())
@@ -64,7 +64,7 @@ function Main () {
 
 function Example () {
   var code = html`
-    <pre class="lh-copy measure-wide-l mt0-ns db bg-white pa3 pa4-l mv0 overflow-auto"><code>${
+    <pre class="lh-copy measure-wide-l mt0-ns db bg-dark-gray pa3 pa4-l mv0 overflow-auto"><code>${
       toHtml(highlight(fs.readFileSync(path.join(__dirname, 'assets/example.js'), 'utf8'), { lang: 'js' }))
     }</code></pre>
   `
@@ -136,7 +136,7 @@ function Principles () {
   `
   function el (title, text) {
     return html`
-      <article class="pv2 fl w-100 w-third-l pl4-l">
+      <article class="pv2 fl w-100 w-third-l pr4-l">
         <h2 class="f5 f4-ns fw6 mb0">
           ${title}
         </h2>
@@ -167,7 +167,7 @@ function Footer () {
   function link (text, url) {
     return html`
       <div class="fl-ns w-100 w-20-l pr3-m pr4-l b">
-        <a class="black link" href=${url}>
+        <a class="black link dim" href=${url}>
           ${text}
         </a>
       </div>
