@@ -75,9 +75,9 @@ function Example () {
         </h2>
       </header>
       <div class="fn fl-l w-60-l">
-        <pre class="lh-copy measure-wide-l mt0-ns db bg-white pa3 pa4-l mv0 overflow-auto">${
+        <pre class="lh-copy measure-wide-l mt0-ns db bg-white pa3 pa4-l mv0 overflow-auto"><code>${
           toHtml(highlight(fs.readFileSync(path.join(__dirname, 'assets/example.js'), 'utf8'), { lang: 'js' }))
-        }</pre>
+        }</code></pre>
       </div>
     </article>
   `
