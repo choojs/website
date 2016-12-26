@@ -1,0 +1,4 @@
+Choo's modular core was engineered from the ground up to be smaller and more
+efficient than every other alternative out there. This was made possible by
+building out the core components over the span of 3 years and combining them
+under a tiny API.

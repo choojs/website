@@ -106,6 +106,10 @@ function Description () {
 }
 
 function Principles () {
+  var one = el('Minimal in every aspect', fs.readFileSync(path.join(__dirname, 'assets/minimal.txt'), 'utf8'))
+  var two = el('No framework lock in', fs.readFileSync(path.join(__dirname, 'assets/frameworks.txt'), 'utf8'))
+  var three = el('Easy to pick up', fs.readFileSync(path.join(__dirname, 'assets/easy.txt'), 'utf8'))
+
   return html`
     <section class="tl pa4 pa5-l bg-lightest-blue navy">
       <div class="mw9 center">
@@ -114,25 +118,9 @@ function Principles () {
         </h1>
         <section class="lh-copy">
           <div class="cf">
-            ${el('Minimal in every aspect', `
-              Choo's modular core was engineered from the ground up to be
-              smaller and more efficient than every other alternative out
-              there. This was made possible by building out the core components
-              over the span of 3 years and combining them under a tiny API.
-            `)}
-            ${el('No framework lock in', `
-              Choo operates on raw DOM nodes using an advanced diffing
-              algorithm. Not only is this fast, it also means that all elements
-              you build can be rendered directly on the DOM. Elements built
-              for choo will work as long as the DOM continues to exist.
-            `)}
-            ${el('Easy to pick up', `
-              We think learning frameworks is boring. So instead of inventing a
-              new language, Choo relies on vanilla JS and HTML. Combined with
-              its small API and clean architecture this means Choo is easy to
-              get started with, and stays that way as projects grow in scope
-              and humans.
-            `)}
+            ${one}
+            ${two}
+            ${three}
           </div>
         </section>
       </div>

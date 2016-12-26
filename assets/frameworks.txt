@@ -1,0 +1,4 @@
+Choo operates on raw DOM nodes using an advanced diffing algorithm. Not only
+is this fast, it also means that all elements you build can be rendered
+directly on the DOM. Elements built for choo will work as long as the DOM
+continues to exist.
