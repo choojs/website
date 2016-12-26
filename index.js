@@ -7,6 +7,7 @@ var path = require('path')
 var fs = require('fs')
 
 ;css('tachyons')
+;css('vhs/css/vhs.min.css')
 var bodyStyles = css`:host { background-color: pink }`
 
 var app = choo()
@@ -18,20 +19,22 @@ function mainView () {
   return html`
     <body class=${bodyStyles}>
       ${Main()}
-      ${Example()}
       ${Description()}
+      ${Example()}
     </body>
   `
 }
 
 function Main () {
   return html`
-    <main class="cf pa3 pa4-m pa5-l mw9 center">
-      <div class="fr w-100 w-80-l">
-        <h1 class="f2 f1-l lh-title mt0 mb4 mb5-ns">
+    <main class="cf pt3 pt4-m pt5-l ph3 ph4-m ph5-l mw9 center">
+      <div class="fr w-100 w-80-l ttu">
+        <h1 class="f2 f1-l lh-title mt0 mb4 mb5-ns vhs-left">
           Choo
           <br class="dn db-ns">
-          sturdy frontend framework
+          <span class="vhs-flicker vhs-delay-5">
+            sturdy frontend framework
+          </span>
         </h1>
       </div>
       <div class="f5 lh-copy fl w-100 mb4">
@@ -62,11 +65,22 @@ function Main () {
 
 function Example () {
   return html`
-    <section class="cf ph4-m ph7-l mw9 center">
-      <pre class="db bg-white pa3 pa4-l mh4-l mv0 overflow-auto"><code>${
-        fs.readFileSync(path.join(__dirname, 'assets/example.js'), 'utf8')
-      }</code></pre>
-    </section>
+    <article class="cf ph4 ph5-l pv5">
+      <header class="fn fl-l w-40-l pr4-l">
+        <h1 class="f2 lh-title fw9 mb3 mt0 pt3 bt bw2">
+          Input field example
+        </h1>
+        <h2 class="f3 mid-gray lh-title">
+          This is a small input field built using choo. It illustrates how to
+          combine logic and views.
+        </h2>
+      </header>
+      <div class="fn fl-l w-60-l">
+        <pre class="lh-copy measure-wide-l mt0-ns db bg-white pa3 pa4-l mv0 overflow-auto"><code>${
+          fs.readFileSync(path.join(__dirname, 'assets/example.js'), 'utf8')
+        }</code></pre>
+      </div>
+    </article>
   `
 }
 
