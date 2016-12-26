@@ -19,6 +19,7 @@ function mainView () {
     <body class=${bodyStyles}>
       ${Main()}
       ${Example()}
+      ${Description()}
     </body>
   `
 }
@@ -60,10 +61,21 @@ function Main () {
 }
 
 function Example () {
-  var file = fs.readFileSync(path.join(__dirname, 'assets/example.js'), 'utf8')
   return html`
-    <section class="cf ph3 ph4-m ph7-l mw9 center">
-      <pre class="db bg-white pa3 pa4-l mh4-l mv0 overflow-auto"><code>${file}</code></pre>
+    <section class="cf ph4-m ph7-l mw9 center">
+      <pre class="db bg-white pa3 pa4-l mh4-l mv0 overflow-auto"><code>${
+        fs.readFileSync(path.join(__dirname, 'assets/example.js'), 'utf8')
+      }</code></pre>
+    </section>
+  `
+}
+
+function Description () {
+  return html`
+    <section class="cf pt4 pt5-ns ph3 ph4-m ph7-l mw9 center">
+      <p class="f4 db mh4-l mv0 pb4 lh-copy">
+        ${fs.readFileSync(path.join(__dirname, 'assets/intro.txt'), 'utf8')}
+      </p>
     </section>
   `
 }
