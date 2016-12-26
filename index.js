@@ -75,10 +75,14 @@ function Example () {
           Input field example
         </h1>
         <h2 class="f3 black-70 lh-title">
-          This is a small input field. It shows how to combine logic and views.
+          The goal of this example is to show how to combine logic and views.
+          It's all just JavaScript and HTML.
         </h2>
+        <div class="f6 ttu tracked dark-gray" href="#">
+          Run online (soon) ❯
+        </div>
       </header>
-      <div class="fn fl-l w-60-l">
+      <div class="fn fl-l w-60-l mt5 mt0-l">
         ${code}
       </div>
     </article>
@@ -125,8 +129,8 @@ function Principles () {
             ${el('Easy to pick up', `
               We think learning frameworks is boring. So instead of inventing a
               new language, Choo relies on vanilla JS and HTML. Combined with
-              its small API and clean architecture this means Choo is very easy
-              to get started with, and stays that way as projects grow in scope
+              its small API and clean architecture this means Choo is easy to
+              get started with, and stays that way as projects grow in scope
               and humans.
             `)}
           </div>
