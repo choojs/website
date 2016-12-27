@@ -38,7 +38,10 @@ function Main () {
     <main class="cf pt3 pt4-m pt5-l ph3 ph4-m ph5-l mw9 center">
       <div class="fr w-100 w-80-l ttu">
         <h1 class="f2 f1-l lh-title mt0 mb4 mb5-ns vhs-left">
-          Choo
+          <span style="letter-spacing: -0.25em">C</span>
+          <span style="letter-spacing: -0.1em">H</span>
+          <span style="letter-spacing: 0.05em">O</span>
+          <span>O</span>
           <br class="dn db-ns">
           <span class="vhs-flicker vhs-delay-4">
             sturdy frontend framework
@@ -145,7 +148,7 @@ function Usage () {
   var corps = [
     [ 'The Washington Post', 'https://www.washingtonpost.com/' ],
     [ 'Google', 'https://google.com' ],
-    ['The Freeman Lab', 'http://thefreemanlab.com/'],
+    [ 'The Freeman Lab', 'http://thefreemanlab.com/' ],
     [ 'The Dat Project', 'http://datproject.org/' ],
     [ 'Folder Studio', 'http://folderstudio.com' ],
     [ 'City of Philadelphia', 'http://www.phila.gov/' ]
