@@ -272,31 +272,31 @@ function Architecture () {
         </div>
       </div>
       <div class="cf mt4">
-        <div class="fl w-100 w-50-m w-third-l">
+        <div class="fl w-100 w-third-l">
           <svg class="w-100">
             <use xlink:href="#icon-logic"/>
           </svg>
         </div>
-        <div class="fl ml3-m ml5-l w-100 w-50-m w-third-l">
+        <div class="fl f5 f6-l lh-copy mt4 mt0-l ml5-l w-100 w-third-l">
           <dl class="lh-title ma0">
-            <dt class="f6 b mt3">
+            <dt class="f6-l b mt3">
               Effects
             </dt>
-            <dd class="ml0">
+            <dd class="ml0 measure">
               makes an asynchronous operation and calls another action when
               it's done
             </dd>
-            <dt class="f6 b mt3">
+            <dt class="f6-l b mt3">
               Subscriptions
             </dt>
-            <dd class="ml0">
+            <dd class="ml0 measure">
               (called once when the DOM loads) listens for external input like
               keyboard or WebSocket events and then calls another action.
             </dd>
-            <dt class="f6 b mt3">
+            <dt class="f6-l b mt3">
               Reducers
             </dt>
-            <dd class="ml0">
+            <dd class="ml0 measure">
               receives the current state and returns an updated version of the
               state which is then sent to the views
             </dd>
