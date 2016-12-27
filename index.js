@@ -2,7 +2,6 @@ var jsSyntax = require('highlight-syntax/js')
 var Highlight = require('highlight-syntax')
 var mount = require('choo/mount')
 var html = require('choo/html')
-var log = require('choo-log')
 var css = require('sheetify')
 var choo = require('choo')
 var path = require('path')
@@ -19,7 +18,6 @@ var bodyStyles = css`
 `
 
 var app = choo()
-app.use(log())
 app.router([ '/', mainView ])
 mount('body', app.start())
 
