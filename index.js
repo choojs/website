@@ -271,38 +271,34 @@ function Architecture () {
           </article>
         </div>
       </div>
-      <div class="cf mt4">
-        <div class="fl w-100 w-third-l">
-          <svg class="w-100">
-            <use xlink:href="#icon-logic"/>
-          </svg>
-        </div>
-        <div class="fl f5 f6-l lh-copy mt4 mt0-l ml5-l w-100 w-third-l">
-          <dl class="lh-title ma0">
-            <dt class="f6-l b mt3">
-              Effects
-            </dt>
-            <dd class="ml0 measure">
-              makes an asynchronous operation and calls another action when
-              it's done
-            </dd>
-            <dt class="f6-l b mt3">
-              Subscriptions
-            </dt>
-            <dd class="ml0 measure">
-              (called once when the DOM loads) listens for external input like
-              keyboard or WebSocket events and then calls another action.
-            </dd>
-            <dt class="f6-l b mt3">
-              Reducers
-            </dt>
-            <dd class="ml0 measure">
-              receives the current state and returns an updated version of the
-              state which is then sent to the views
-            </dd>
-          </dl>
-        </div>
-      </div>
+      <section class="cf mt3 ba br1 mw8-l pa4 pb5">
+        <svg class="fl w-100 w-50-l">
+          <use xlink:href="#icon-logic"/>
+        </svg>
+        <dl class="lh-title ma0 fl f5 f6-l lh-copy pt4 pt0-l pl4-l w-100 w-50-l">
+          <dt class="f6-l b mt3">
+            Effects
+          </dt>
+          <dd class="ml0 measure">
+            makes an asynchronous operation and calls another action when
+            it's done
+          </dd>
+          <dt class="f6-l b mt3">
+            Subscriptions
+          </dt>
+          <dd class="ml0 measure">
+            (called once when the DOM loads) listens for external input like
+            keyboard or WebSocket events and then calls another action.
+          </dd>
+          <dt class="f6-l b mt3">
+            Reducers
+          </dt>
+          <dd class="ml0 measure">
+            receives the current state and returns an updated version of the
+            state which is then sent to the views
+          </dd>
+        </dl>
+      </section>
     </section>
   `
 }
