@@ -10,16 +10,18 @@ var fs = require('fs')
 var highlight = Highlight([ jsSyntax ])
 
 ;css('tachyons')
-;css('vhs/css/vhs.min.css')
+;css('vhs/css/vhs.css')
 ;css('./assets/code.css')
-var bodyStyles = css`
-  :host { background-color: #ffc0cb }
-  .bsbb { box-sizing: border-box }
-`
+var bodyStyles = css`:host { background-color: #ffc0cb }`
 
 var app = choo()
 app.router([ '/', mainView ])
-mount('body', app.start())
+
+if (!module.parent) {
+  mount('body', app.start())
+} else {
+  module.exports = app
+}
 
 function mainView () {
   return html`
@@ -332,5 +334,5 @@ function Footer () {
 function toHtml (str) {
   var el = html`<div></div>`
   el.innerHTML = str
-  return el.children[0]
+  return el.childNodes[0]
 }
