@@ -35,9 +35,15 @@ function mainView () {
 
 function Main () {
   var prefix = css`
-    :host .c { letter-spacing: -0.25em }
-    :host .h { letter-spacing: -0.1em }
-    :host .o { letter-spacing: 0.05em }
+    :host .c,
+    :host .h,
+    :host .o { letter-spacing: -0.25em }
+
+    @media screen and (min-width: 30em) {
+      :host .c { letter-spacing: -0.25em }
+      :host .h { letter-spacing: -0.1em }
+      :host .o { letter-spacing: 0.05em }
+    }
   `
   return html`
     <main class="cf pt3 pt4-m pt5-l ph3 ph4-m ph5-l mw9 center">
