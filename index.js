@@ -151,7 +151,8 @@ function Usage () {
     [ 'The Freeman Lab', 'http://thefreemanlab.com/' ],
     [ 'The Dat Project', 'http://datproject.org/' ],
     [ 'Folder Studio', 'http://folderstudio.com' ],
-    [ 'City of Philadelphia', 'http://www.phila.gov/' ]
+    [ 'City of Philadelphia', 'http://www.phila.gov/' ],
+    [ 'Variable', 'http://variable.io' ]
   ]
   return html`
     <section class="tl pa4 pa5-l bg-washed-green">
@@ -163,7 +164,7 @@ function Usage () {
           Choo has been used on projects and experiments by folks from a fair
           few groups.
         </p>
-        <section class="lh-copy mw7">
+        <section class="lh-copy mw9">
           <div class="cf">
           ${corps.map(el)}
           </div>
@@ -175,7 +176,7 @@ function Usage () {
     var title = tuple[0]
     var url = tuple[1]
     return html`
-      <article class="fl w-100 w-third-l pr4-l">
+      <article class="fl w-100 w-50-m w-25-l pr4-l">
         <a href=${url} class="link">
           <h2 class="f5 f4-ns fw6 mb0 dim black">
             ${title}
