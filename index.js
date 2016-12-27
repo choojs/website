@@ -154,7 +154,7 @@ function Usage () {
     [ 'The Washington Post', 'https://www.washingtonpost.com/' ],
     [ 'Google', 'https://google.com' ],
     [ 'The Freeman Lab', 'http://thefreemanlab.com/' ],
-    [ 'The Dat Project', 'http://datproject.org/' ],
+    [ 'Dat Project', 'http://datproject.org/' ],
     [ 'Folder Studio', 'http://folderstudio.com' ],
     [ 'City of Philadelphia', 'http://www.phila.gov/' ],
     [ 'Variable', 'http://variable.io' ]
@@ -172,6 +172,11 @@ function Usage () {
         <section class="lh-copy mw9">
           <div class="cf">
           ${corps.map(el)}
+          <article class="fl w-100 w-50-m w-25-l pr4-l">
+            <h2 class="f5 f4-ns fw6 mb0 black">
+              You?
+            </h2>
+          </article>
           </div>
         </section>
       </div>
