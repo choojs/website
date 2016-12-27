@@ -26,12 +26,14 @@ mount('body', app.start())
 function mainView () {
   return html`
     <body class=${bodyStyles}>
+      ${toHtml(fs.readFileSync(path.join(__dirname, 'sprite.svg'), 'utf8'))}
       ${Main()}
       ${Description()}
       ${Example()}
       ${Principles()}
       ${Usage()}
       ${Start()}
+      ${Architecture()}
       ${Footer()}
     </body>
   `
@@ -106,12 +108,6 @@ function Example () {
       </div>
     </article>
   `
-
-  function toHtml (str) {
-    var el = html`<div></div>`
-    el.innerHTML = str
-    return el.children[0]
-  }
 }
 
 function Description () {
@@ -253,6 +249,64 @@ function Start () {
   `
 }
 
+function Architecture () {
+  return html`
+    <section class="tl ph4 pv5 pa5-l bg-washed-green">
+      <div class="mw9 center">
+        <div class="cf">
+          <article class="pb2 fl w-100 bt bw2">
+            <h2 class="f4 f1-ns fw6 mb2">
+              Let's talk about the choo architecture
+            </h2>
+          </article>
+          <article class="pb2 fl w-100 w-50-l">
+            <p class="f5 f4-ns measure lh-copy mt4 mb0">
+              choo cleanly structures internal data flow, so that all pieces of logic can be combined into a nice, cohesive machine. Roughly speaking there are two parts to choo: the views and the models. Models take care of state and logic, and views are responsible for displaying the interface and responding to user interactions.
+            </p>
+          </article>
+          <article class="pb2 pl3-l fl w-100 w-50-l">
+            <p class="f5 f4-ns measure lh-copy mt4 mb0">
+              All of choo's state is contained in a single object and whenever it changes the views receive a new version of the state which they can use to safely render a complete new representation of the DOM. The DOM is efficiently updated using DOM diffing/patching.
+            </p>
+          </article>
+        </div>
+      </div>
+      <div class="cf mt4">
+        <div class="fl w-100 w-50-m w-third-l">
+          <svg class="w-100">
+            <use xlink:href="#icon-logic"/>
+          </svg>
+        </div>
+        <div class="fl ml3-m ml5-l w-100 w-50-m w-third-l">
+          <dl class="lh-title ma0">
+            <dt class="f6 b mt3">
+              Effects
+            </dt>
+            <dd class="ml0">
+              makes an asynchronous operation and calls another action when
+              it's done
+            </dd>
+            <dt class="f6 b mt3">
+              Subscriptions
+            </dt>
+            <dd class="ml0">
+              (called once when the DOM loads) listens for external input like
+              keyboard or WebSocket events and then calls another action.
+            </dd>
+            <dt class="f6 b mt3">
+              Reducers
+            </dt>
+            <dd class="ml0">
+              receives the current state and returns an updated version of the
+              state which is then sent to the views
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+  `
+}
+
 function Footer () {
   return html`
     <footer class="bg-white ph4 ph5-l pb4 pt4 pt5-l">
@@ -271,11 +325,17 @@ function Footer () {
 
   function link (text, url) {
     return html`
-      <div class="fl-ns w-100 w-20-l pr3-m pr4-l b">
-        <a class="black link dim" href=${url}>
+      <div class="fl-ns w-100 w-20-l pr3-m pr4-l">
+        <a class="black link dim b" href=${url}>
           ${text}
         </a>
       </div>
     `
   }
+}
+
+function toHtml (str) {
+  var el = html`<div></div>`
+  el.innerHTML = str
+  return el.children[0]
 }
