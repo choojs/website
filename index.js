@@ -209,43 +209,43 @@ function Usage () {
 
 function Start () {
   return html`
-    <section class="tl pa4 pa5-l">
-      <div class="mw9 center">
+    <article class="cf ph4 ph5-l pv5">
+      <header class="fn fl-l w-40-l pr4-l">
         <h1 class="f2 lh-title fw9 mb3 mt0 pt3 bt bw2">
           Getting started
         </h1>
-        <p class="f4">
+        <h2 class="f3 black-70 lh-title">
           Getting started with Choo shouldn't be hard, so we've included some
           options.
-        </p>
+        </h2>
+      </header>
+      <div class="fn fl-l w-60-l mt5 mt0-l">
         <section class="lh-copy mw9">
           <div class="cf">
             <article class="fl w-100 pr4-l">
-              <h2 class="f6 f5-ns fw6 mb0 black">
-                Read the handbook
+              <h2 class="f6 f5-ns fw6 mv0 black lh-solid">
+                Learn choo step by step
               </h2>
-              <a class="f6 mt3 dib pv2 ph3 link white bg-light-blue tc" href="https://github.com/yoshuawuyts/choo-handbook">
-                Open handbook in new tab
+              <a class="f6 mv3 dib pv2 ph3 link white bg-light-blue tc" href="https://github.com/yoshuawuyts/choo-handbook">
+                Read the handbook
               </a>
             </article>
-            <section class="mw7 mt6-l">
-              <article class="fl w-100 w-50-l pr4-l">
-                <h2 class="f6 f5-ns fw6 mb0 black">
-                  Install from npm
-                </h2>
-                <pre class="pre black-70 overflow-auto"><code class="code f6 dib pv2 ph3 w-100 bg-black-70 washed-green">${
-                  '$ npm install choo'
-                }</code></pre>
-              </article>
-              <article class="fl w-100 w-50-l pr4-l">
-                <h2 class="f6 f5-ns fw6 mb0 black">
-                  Install the CLI
-                </h2>
-                <pre class="pre black-70 overflow-auto"><code class="code f6 dib pv2 ph3 w-100 bg-black-70 washed-green">${
-                  '$ npm install choo-cli'
-                }</code></pre>
-              </article>
-            </section>
+            <article class="fl w-100 pr4-l mt3">
+              <h2 class="f6 f5-ns fw6 mv0 black">
+                Install from npm
+              </h2>
+              <pre class="pre black-70 overflow-auto"><code class="code f6 dib pv2 ph3 w-100 bg-black-70 washed-green">${
+                '$ npm install choo'
+              }</code></pre>
+            </article>
+            <article class="fl w-100 pr4-l mt3">
+              <h2 class="f6 f5-ns fw6 mv0 black">
+                Install the CLI
+              </h2>
+              <pre class="pre black-70 overflow-auto"><code class="code f6 dib pv2 ph3 w-100 bg-black-70 washed-green">${
+                '$ npm install choo-cli'
+              }</code></pre>
+            </article>
           </div>
         </section>
       </div>
