@@ -156,7 +156,7 @@ function Usage () {
     [ 'The Freeman Lab', 'http://thefreemanlab.com/' ],
     [ 'Dat Project', 'http://datproject.org/' ],
     [ 'Folder Studio', 'http://folderstudio.com' ],
-    [ 'City of Philadelphia', 'http://www.phila.gov/' ],
+    [ 'City of Philadelphia', 'https://beta.phila.gov/' ],
     [ 'Variable', 'http://variable.io' ]
   ]
   return html`
