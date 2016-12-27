@@ -34,13 +34,18 @@ function mainView () {
 }
 
 function Main () {
+  var prefix = css`
+    :host .c { letter-spacing: -0.25em }
+    :host .h { letter-spacing: -0.1em }
+    :host .o { letter-spacing: 0.05em }
+  `
   return html`
     <main class="cf pt3 pt4-m pt5-l ph3 ph4-m ph5-l mw9 center">
       <div class="fr w-100 w-80-l ttu">
-        <h1 class="f2 f1-l lh-title mt0 mb4 mb5-ns vhs-left">
-          <span style="letter-spacing: -0.25em">C</span>
-          <span style="letter-spacing: -0.1em">H</span>
-          <span style="letter-spacing: 0.05em">O</span>
+        <h1 class="f2 f1-l lh-title mt0 mb4 mb5-ns vhs-left ${prefix}">
+          <span class="c">C</span>
+          <span class="h">H</span>
+          <span class="o">O</span>
           <span>O</span>
           <br class="dn db-ns">
           <span class="vhs-flicker vhs-delay-4">
@@ -112,7 +117,7 @@ function Description () {
 function Principles () {
   var one = el('Minimal in every aspect', fs.readFileSync(path.join(__dirname, 'assets/minimal.txt'), 'utf8'))
   var two = el('No framework lock in', fs.readFileSync(path.join(__dirname, 'assets/frameworks.txt'), 'utf8'))
-  var three = el('Easy to pick up', fs.readFileSync(path.join(__dirname, 'assets/easy.txt'), 'utf8'))
+  var three = el('Easy to start with', fs.readFileSync(path.join(__dirname, 'assets/easy.txt'), 'utf8'))
 
   return html`
     <section class="tl pa4 pa5-l bg-lightest-blue navy">
