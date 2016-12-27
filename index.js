@@ -13,7 +13,10 @@ var highlight = Highlight([ jsSyntax ])
 ;css('tachyons')
 ;css('vhs/css/vhs.min.css')
 ;css('./assets/code.css')
-var bodyStyles = css`:host { background-color: #ffc0cb }`
+var bodyStyles = css`
+  :host { background-color: #ffc0cb }
+  .bsbb { box-sizing: border-box }
+`
 
 var app = choo()
 app.use(log())
@@ -28,6 +31,7 @@ function mainView () {
       ${Example()}
       ${Principles()}
       ${Usage()}
+      ${Start()}
       ${Footer()}
     </body>
   `
@@ -177,12 +181,12 @@ function Usage () {
         </p>
         <section class="lh-copy mw9">
           <div class="cf">
-          ${corps.map(el)}
-          <article class="fl w-100 w-50-m w-25-l pr4-l">
-            <h2 class="f5 f4-ns fw6 mb0 black">
-              You?
-            </h2>
-          </article>
+            ${corps.map(el)}
+            <article class="fl w-100 w-50-m w-25-l pr4-l">
+              <h2 class="f5 f4-ns fw6 mb0 black">
+                You?
+              </h2>
+            </article>
           </div>
         </section>
       </div>
@@ -201,6 +205,52 @@ function Usage () {
       </article>
     `
   }
+}
+
+function Start () {
+  return html`
+    <section class="tl pa4 pa5-l">
+      <div class="mw9 center">
+        <h1 class="f2 lh-title fw9 mb3 mt0 pt3 bt bw2">
+          Getting started
+        </h1>
+        <p class="f4">
+          Getting started with Choo shouldn't be hard, so we've included some
+          options.
+        </p>
+        <section class="lh-copy mw9">
+          <div class="cf">
+            <article class="fl w-100 pr4-l">
+              <h2 class="f6 f5-ns fw6 mb0 black">
+                Read the handbook
+              </h2>
+              <a class="f6 mt3 dib pv2 ph3 link white bg-light-blue tc" href="https://github.com/yoshuawuyts/choo-handbook">
+                Open handbook in new tab
+              </a>
+            </article>
+            <section class="mw7 mt6-l">
+              <article class="fl w-100 w-50-l pr4-l">
+                <h2 class="f6 f5-ns fw6 mb0 black">
+                  Install from npm
+                </h2>
+                <pre class="pre black-70 overflow-auto"><code class="code f6 dib pv2 ph3 w-100 bg-black-70 washed-green">${
+                  '$ npm install choo'
+                }</code></pre>
+              </article>
+              <article class="fl w-100 w-50-l pr4-l">
+                <h2 class="f6 f5-ns fw6 mb0 black">
+                  Install the CLI
+                </h2>
+                <pre class="pre black-70 overflow-auto"><code class="code f6 dib pv2 ph3 w-100 bg-black-70 washed-green">${
+                  '$ npm install choo-cli'
+                }</code></pre>
+              </article>
+            </section>
+          </div>
+        </section>
+      </div>
+    </section>
+  `
 }
 
 function Footer () {
