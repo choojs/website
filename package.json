@@ -6,7 +6,8 @@
   "scripts": {
     "start": "bankai start",
     "build": "bankai build -O",
-    "test": "standard && dependency-check . --unused --no-dev -i tachyons"
+    "test": "standard && dependency-check . --unused --no-dev -i tachyons",
+    "deploy": "surge -d dist --domain choo.io"
   },
   "browserify": {
     "transform": [
@@ -24,6 +25,7 @@
     "bankai": "^5.1.3",
     "brfs": "^1.4.3",
     "dependency-check": "^2.6.0",
-    "standard": "^8.6.0"
+    "standard": "^8.6.0",
+    "surge": "^0.18.0"
   }
 }
