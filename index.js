@@ -27,6 +27,7 @@ function mainView () {
       ${Description()}
       ${Example()}
       ${Principles()}
+      ${Usage()}
       ${Footer()}
     </body>
   `
@@ -140,11 +141,53 @@ function Principles () {
   }
 }
 
+function Usage () {
+  var corps = [
+    [ 'The Washington Post', 'https://www.washingtonpost.com/' ],
+    [ 'Google', 'https://google.com' ],
+    ['The Freeman Lab', 'http://thefreemanlab.com/'],
+    [ 'The Dat Project', 'http://datproject.org/' ],
+    [ 'Folder Studio', 'http://folderstudio.com' ],
+    [ 'City of Philadelphia', 'http://www.phila.gov/' ]
+  ]
+  return html`
+    <section class="tl pa4 pa5-l bg-washed-green">
+      <div class="mw9 center">
+        <h1 class="f2 lh-title fw9 mb3 mt0 pt3 bt bw2">
+          Choo in the wild
+        </h1>
+        <p class="f4">
+          Choo has been used on projects and experiments by folks from a fair
+          few groups.
+        </p>
+        <section class="lh-copy mw7">
+          <div class="cf">
+          ${corps.map(el)}
+          </div>
+        </section>
+      </div>
+    </section>
+  `
+  function el (tuple) {
+    var title = tuple[0]
+    var url = tuple[1]
+    return html`
+      <article class="fl w-100 w-third-l pr4-l">
+        <a href=${url} class="link">
+          <h2 class="f5 f4-ns fw6 mb0 dim black">
+            ${title}
+          </h2>
+        </a>
+      </article>
+    `
+  }
+}
+
 function Footer () {
   return html`
     <footer class="bg-white ph4 ph5-l pb4 pt4 pt5-l">
       <div class="f5 lh-copy fl w-100">
-        ${link('View the handbook', 'https://github.com/yoshuawuyts/choo-handbook')}
+        ${link('Read the handbook', 'https://github.com/yoshuawuyts/choo-handbook')}
         ${link('Install the CLI', 'https://github.com/trainyard/choo-cli')}
         ${link('Choo on GitHub', 'https://github.com/yoshuawuyts/choo')}
         ${link("Here's a twitter", 'https://twitter.com/yoshuawuyts')}
