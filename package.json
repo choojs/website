@@ -6,7 +6,7 @@
   "scripts": {
     "start": "bankai start",
     "build": "bankai build -O",
-    "test": "standard && dependency-check . --unused --no-dev -i tachyons",
+    "test": "standard && dependency-check . --unused --no-dev -i tachyons -i vhs",
     "publish": "git push && npm run build && surge -p ./dist -d choo.io"
   },
   "browserify": {
