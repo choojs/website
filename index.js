@@ -222,7 +222,7 @@ function Start () {
               <h2 class="f6 f5-ns fw6 mv0 black lh-solid">
                 Learn choo step by step
               </h2>
-              <a class="f6 mv3 dib pv2 ph3 link white bg-light-blue tc" href="https://github.com/yoshuawuyts/choo-handbook">
+              <a class="ba no-underline br1 black-80 bg-washed-blue grow b inline-flex items-center mr3 mv3 pv2 ph3" href="https://github.com/yoshuawuyts/choo-handbook">
                 Read the handbook
               </a>
             </article>
