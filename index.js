@@ -11,17 +11,14 @@ var highlight = Highlight([ jsSyntax ])
 
 ;css('tachyons')
 ;css('vhs/css/vhs.css')
-;css('./assets/code.css')
+;css('highlight-syntax-pastel')
 var bodyStyles = css`:host { background-color: #ffc0cb }`
 
 var app = choo()
 app.router([ '/', mainView ])
 
-if (!module.parent) {
-  mount('body', app.start())
-} else {
-  module.exports = app
-}
+if (!module.parent) mount('body', app.start())
+else module.exports = app
 
 function mainView () {
   return html`
@@ -52,7 +49,7 @@ function Main () {
     }
   `
   return html`
-    <main class="cf pt3 pt4-m pt5-l ph3 ph4-m ph5-l mw9 center">
+    <main class="cf pt4 pt5-l ph4 ph5-l mw9 center">
       <div class="fr w-100 w-80-l ttu">
         <h1 class="f2 f1-l lh-title mt0 mb4 mb5-ns vhs-left ${prefix}">
           <span class="c">C</span>
@@ -65,7 +62,7 @@ function Main () {
           </span>
         </h1>
       </div>
-      <div class="f5 lh-copy fl w-100 mb4 vhs-flicker vhs-delay-5">
+      <div class="f5 lh-copy fl w-100 vhs-flicker vhs-delay-5">
         ${tiny('tiny API')}
         ${tiny('performs well')}
         ${tiny('5kb in size')}
@@ -84,8 +81,21 @@ function Main () {
 }
 
 function Example () {
+  var codeMargin = css`
+    /* this css is super gross; let's move onto tachyons when possible */
+    :host {
+      margin-left: -2em;
+      margin-right: -2em;
+    }
+    @media screen and (min-width: 30em) {
+      :host {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  `
   var code = html`
-    <pre class="lh-copy measure-wide-l mt0-ns db bg-dark-gray pa3 pa4-l mv0 overflow-auto"><code>${
+    <pre class="lh-copy measure-wide-l mt0-ns db bg-dark-gray pa4 mv0 f6 f5-l overflow-auto"><code>${
       toHtml(highlight(fs.readFileSync(path.join(__dirname, 'assets/example.js'), 'utf8'), { lang: 'js' }))
     }</code></pre>
   `
@@ -103,7 +113,7 @@ function Example () {
           Run online (soon) ❯
         </div>
       </header>
-      <div class="fn fl-l w-60-l mt5 mt0-l">
+      <div class="fn fl-l w-60-l mt5 mt0-l ${codeMargin}">
         ${code}
       </div>
     </article>
@@ -112,8 +122,8 @@ function Example () {
 
 function Description () {
   return html`
-    <section class="cf pt4 pt5-l ph3 ph4-m ph7-l mw9 center vhs-flicker vhs-delay-5">
-      <p class="f4 db mh4-l mv0 pb4 lh-copy">
+    <section class="cf pt4 pb0 pb4-ns pt5-l ph4 ph7-l mh4-l mw9 center vhs-flicker vhs-delay-5">
+      <p class="f4 db mv0 lh-copy">
         ${fs.readFileSync(path.join(__dirname, 'assets/intro.txt'), 'utf8')}
       </p>
     </section>
@@ -217,7 +227,7 @@ function Start () {
           options.
         </h2>
       </header>
-      <div class="fn fl-l w-60-l mt5 mt0-l">
+      <div class="fn fl-l w-60-l mt4 mt0-l">
         <section class="lh-copy mw9">
           <div class="cf">
             <article class="fl w-100 pr4-l">
@@ -257,7 +267,7 @@ function Architecture () {
       <div class="mw9 center">
         <div class="cf">
           <article class="pb2 fl w-100 bt bw2">
-            <h2 class="f4 f1-ns fw6 mb2">
+            <h2 class="f3 f1-ns fw6 mb1 mb2-ns">
               Let's talk about the choo architecture
             </h2>
           </article>
@@ -273,11 +283,11 @@ function Architecture () {
           </article>
         </div>
       </div>
-      <section class="cf mt3 mt4-l ba br1 mw8-l pa4 pb5">
+      <section class="cf mt3 mt4-l ba br1 mw8-l pa3 pa4-ns pb5">
         <svg class="fl w-100 w-50-l">
           <use xlink:href="#icon-logic"/>
         </svg>
-        <dl class="lh-title ma0 fl f5 f6-l lh-copy pt4 pt0-l pl4-l w-100 w-50-l">
+        <dl class="lh-title ma0 fl f5 f6-l lh-copy pt0 pl4-l w-100 w-50-l">
           <dt class="f6-l b mt3">
             Effects
           </dt>

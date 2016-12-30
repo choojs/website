@@ -18,6 +18,7 @@
   "dependencies": {
     "choo": "^4.0.0",
     "highlight-syntax": "^3.0.2",
+    "highlight-syntax-pastel": "^1.0.0",
     "tachyons": "^4.5.6",
     "vhs": "^0.2.0"
   },
