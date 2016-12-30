@@ -24,7 +24,7 @@ function mainView (state, prev, send) {
   }
 }
 
-app.router(['/', mainView])
+app.router([ '/', mainView ])
 
 var tree = app.start()
 document.body.appendChild(tree)
