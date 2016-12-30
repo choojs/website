@@ -325,8 +325,10 @@ function Footer () {
         ${link("Here's a twitter", 'https://twitter.com/yoshuawuyts')}
         ${link('View source', 'https://github.com/yoshuawuyts/choo-website')}
       </div>
-      <p class="b pt6 pt5-l">
-        Made with 🚂 in Saigon, Tokyo, Berlin
+      <p class="b pt6 pt5-l cf lh-copy">
+        <span class="fl-m">Made with 🚂 in Saigon, Tokyo, Berlin</span>
+        <br class="db dn-m">
+        <span class="fr-m">By Yosh & friends</span>
       </p>
     </footer>
   `
