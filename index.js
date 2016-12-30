@@ -273,12 +273,12 @@ function Architecture () {
           </article>
           <article class="pb2 fl w-100 w-50-l">
             <p class="f5 f4-ns measure lh-copy mt4 mb0">
-              choo cleanly structures internal data flow, so that all pieces of logic can be combined into a nice, cohesive machine. Roughly speaking there are two parts to choo: the views and the models. Models take care of state and logic, and views are responsible for displaying the interface and responding to user interactions.
+              Choo cleanly structures internal data flow, so that all pieces of logic can be combined into a nice, cohesive machine. Roughly speaking there are two parts to choo: the views and the models. Models take care of state and logic, and views are responsible for displaying the interface and responding to user interactions.
             </p>
           </article>
           <article class="pb2 pl3-l fl w-100 w-50-l">
             <p class="f5 f4-ns measure lh-copy mt4 mb0">
-              All of choo's state is contained in a single object and whenever it changes the views receive a new version of the state which they can use to safely render a complete new representation of the DOM. The DOM is efficiently updated using DOM diffing/patching.
+              All of Choo's state is contained in a single object and whenever it changes the views receive a new version of the state which they can use to safely render a complete new representation of the DOM. The DOM is efficiently updated using DOM diffing/patching.
             </p>
           </article>
         </div>
