@@ -39,9 +39,7 @@ function mainView () {
 function Main () {
   return html`
     <main class="cf pt4 pt5-l ph4 ph5-l mw9 center">
-      <div class="fr w-100 w-80-l ttu">
-        ${Logo('sturdy frontend framework')}
-      </div>
+      ${Logo('sturdy frontend framework')}
       <div class="f5 lh-copy fl w-100 vhs-flicker vhs-delay-5">
         ${tiny('tiny API')}
         ${tiny('performs well')}
@@ -116,7 +114,7 @@ function Principles () {
   var three = el('Easy to start with', fs.readFileSync(path.join(__dirname, 'assets/easy.txt'), 'utf8'))
 
   return html`
-    <section class="tl pa4 pa5-l bg-lightest-blue navy">
+    <section class="tl ph4 ph5-l pv5 bg-lightest-blue navy">
       <div class="mw9 center">
         <h1 class="f2 lh-title fw9 mb3 mt0 pt3 bt bw2">
           Principles
@@ -158,7 +156,7 @@ function Usage () {
     [ 'Littlstar', 'https://littlstar.com/' ]
   ]
   return html`
-    <section class="tl pa4 pa5-l bg-washed-green">
+    <section class="tl ph4 ph5-l pv5 bg-washed-green">
       <div class="mw9 center">
         <h1 class="f2 lh-title fw9 mb3 mt0 pt3 bt bw2">
           Choo in the wild
