@@ -37,30 +37,10 @@ function mainView () {
 }
 
 function Main () {
-  var prefix = css`
-    :host .c,
-    :host .h,
-    :host .o { letter-spacing: -0.25em }
-
-    @media screen and (min-width: 30em) {
-      :host .c { letter-spacing: -0.25em }
-      :host .h { letter-spacing: -0.1em }
-      :host .o { letter-spacing: 0.05em }
-    }
-  `
   return html`
     <main class="cf pt4 pt5-l ph4 ph5-l mw9 center">
       <div class="fr w-100 w-80-l ttu">
-        <h1 class="f2 f1-l lh-title mt0 mb4 mb5-ns vhs-left ${prefix}">
-          <span class="c">C</span>
-          <span class="h">H</span>
-          <span class="o">O</span>
-          <span>O</span>
-          <br class="dn db-ns">
-          <span class="vhs-flicker vhs-delay-4">
-            sturdy frontend framework
-          </span>
-        </h1>
+        ${Logo('sturdy frontend framework')}
       </div>
       <div class="f5 lh-copy fl w-100 vhs-flicker vhs-delay-5">
         ${tiny('tiny API')}
@@ -348,4 +328,31 @@ function toHtml (str) {
   var el = html`<div></div>`
   el.innerHTML = str
   return el.childNodes[0]
+}
+
+function Logo (text) {
+  var prefix = css`
+    :host .c,
+    :host .h,
+    :host .o { letter-spacing: -0.25em }
+
+    @media screen and (min-width: 30em) {
+      :host .c { letter-spacing: -0.25em }
+      :host .h { letter-spacing: -0.1em }
+      :host .o { letter-spacing: 0.05em }
+    }
+  `
+  return html`
+  <div class="fr w-100 w-80-l ttu">
+    <h1 class="f2 f1-l lh-title mt0 mb4 mb5-ns vhs-left ${prefix}">
+      <span class="c">C</span>
+      <span class="h">H</span>
+      <span class="o">O</span>
+      <span>O</span>
+      <br class="dn db-ns">
+      <span class="vhs-flicker vhs-delay-4">
+        ${text}
+      </span>
+    </h1>
+  `
 }
