@@ -153,7 +153,8 @@ function Usage () {
     [ 'City of Philadelphia', 'https://beta.phila.gov/' ],
     [ 'Variable', 'http://variable.io' ],
     [ 'ABC Australia', 'http://www.abc.net.au/' ],
-    [ 'Littlstar', 'https://littlstar.com/' ]
+    [ 'Littlstar', 'https://littlstar.com/' ],
+    [ 'Greenkeeper', 'https://greenkeeper.io/' ]
   ]
   return html`
     <section class="tl ph4 ph5-l pv5 bg-washed-green">
