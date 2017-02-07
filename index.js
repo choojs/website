@@ -9,9 +9,9 @@ var fs = require('fs')
 
 var highlight = Highlight([ jsSyntax ])
 
-;css('tachyons')
-;css('vhs/css/vhs.css')
-;css('highlight-syntax-pastel')
+css('tachyons')
+css('vhs/css/vhs.css')
+css('highlight-syntax-pastel')
 var bodyStyles = css`:host { background-color: #ffc0cb }`
 
 var app = choo()
@@ -31,6 +31,7 @@ function mainView () {
       ${Usage()}
       ${Start()}
       ${Architecture()}
+      ${Sponsors()}
       ${Footer()}
     </body>
   `
@@ -292,6 +293,48 @@ function Architecture () {
       </section>
     </section>
   `
+}
+
+function Sponsors () {
+  var corps = [
+    [ 'Dat Project', 'https://datproject.org/' ],
+    [ 'X-Team', 'https://x-team.com' ],
+    [ 'Andrew Joslin', 'https://twitter.com/andrewtjoslin' ],
+    [ 'Remi Nyborg', 'https://twitter.com/reminyborg' ],
+    [ 'Jacob Burden', 'https://twitter.com/jekrb' ],
+    [ 'Pavel', 'https://opencollective.com/pavel' ],
+    [ 'Terkel Gjervig', 'https://twitter.com/terkelg' ]
+  ]
+  return html`
+    <article class="cf tl ph4 ph5-l pv5 bg-lightest-blue">
+      <section class="fn fl-l w-100 w-40-l pr4-l">
+        <h2 class="f3 f1-ns lh-title fw9 mb3 mt0 pt3 bt bw2">
+          We're supported by some fine folk
+        </h2>
+        <a href="https://opencollective.com/choo"
+          class="f5 f4-ns ba no-underline br1 black-80 bg-washed-blue grow b inline-flex items-center mr3 mv3 pv2 ph3">
+          Help us pay rent 🙏
+        </a>
+      </section>
+      <div class="fl w-100 w-60-l mt5 pa3-l mt0-l">
+        ${corps.map(el)}
+      </div>
+    </article>
+  `
+
+  function el (tuple) {
+    var title = tuple[0]
+    var url = tuple[1]
+    return html`
+      <article class="fl w-100 w-50-m w-33-l pr4-l">
+        <a href=${url} class="link">
+          <h2 class="f4 f3-ns fw6 mb0 dim black lh-title">
+            ${title}
+          </h2>
+        </a>
+      </article>
+    `
+  }
 }
 
 function Footer () {
