@@ -316,7 +316,7 @@ function Sponsors () {
           Help us pay rent 🙏
         </a>
       </section>
-      <div class="fl w-100 w-60-l mt5 pa3-l mt0-l">
+      <div class="fl w-100 w-60-l pa3-l mt0-l">
         ${corps.map(el)}
       </div>
     </article>
