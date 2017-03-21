@@ -30,7 +30,6 @@ function mainView () {
       ${Principles()}
       ${Usage()}
       ${Start()}
-      ${Architecture()}
       ${Sponsors()}
       ${Footer()}
     </body>
@@ -237,60 +236,6 @@ function Start () {
           </div>
         </section>
       </div>
-    </section>
-  `
-}
-
-function Architecture () {
-  return html`
-    <section class="tl ph4 pv5 pa5-l bg-washed-green">
-      <div class="mw9 center">
-        <div class="cf">
-          <article class="pb2 fl w-100 bt bw2">
-            <h2 class="f3 f1-ns fw6 mb1 mb2-ns">
-              Let's talk about the choo architecture
-            </h2>
-          </article>
-          <article class="pb2 fl w-100 w-50-l">
-            <p class="f5 f4-ns measure lh-copy mt4 mb0">
-              Choo cleanly structures internal data flow, so that all pieces of logic can be combined into a nice, cohesive machine. Roughly speaking there are two parts to choo: the views and the models. Models take care of state and logic, and views are responsible for displaying the interface and responding to user interactions.
-            </p>
-          </article>
-          <article class="pb2 pl3-l fl w-100 w-50-l">
-            <p class="f5 f4-ns measure lh-copy mt4 mb0">
-              All of Choo's state is contained in a single object and whenever it changes the views receive a new version of the state which they can use to safely render a complete new representation of the DOM. The DOM is efficiently updated using DOM diffing/patching.
-            </p>
-          </article>
-        </div>
-      </div>
-      <section class="cf mt3 mt4-l ba br1 mw8-l pa3 pa4-ns pb5">
-        <svg class="fl w-100 w-50-l">
-          <use xlink:href="#icon-logic"/>
-        </svg>
-        <dl class="lh-title ma0 fl f5 f6-l lh-copy pt0 pl4-l w-100 w-50-l">
-          <dt class="f6-l b mt3">
-            Effects
-          </dt>
-          <dd class="ml0 measure">
-            makes an asynchronous operation and calls another action when
-            it's done
-          </dd>
-          <dt class="f6-l b mt3">
-            Subscriptions
-          </dt>
-          <dd class="ml0 measure">
-            (called once when the DOM loads) listens for external input like
-            keyboard or WebSocket events and then calls another action.
-          </dd>
-          <dt class="f6-l b mt3">
-            Reducers
-          </dt>
-          <dd class="ml0 measure">
-            receives the current state and returns an updated version of the
-            state which is then sent to the views
-          </dd>
-        </dl>
-      </section>
     </section>
   `
 }

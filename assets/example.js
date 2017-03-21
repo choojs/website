@@ -1,30 +1,30 @@
 var html = require('choo/html')
 var choo = require('choo')
+
 var app = choo()
+app.use(titleStore)
+app.route('/', mainView)
+app.mount('body')
 
-app.model({
-  state: { title: 'Not quite set yet' },
-  reducers: {
-    update: function (state, data) {
-      return { title: data }
-    }
-  }
-})
-
-function mainView (state, prev, send) {
+function mainView (state, emit) {
   return html`
-    <main>
+    <body>
       <h1>Title: ${state.title}</h1>
       <input type="text" oninput=${update}>
-    </main>
+    </body>
   `
 
   function update (e) {
-    send('update', e.target.value)
+    emit('update', e.target.value)
   }
 }
 
-app.router([ '/', mainView ])
-
-var tree = app.start()
-document.body.appendChild(tree)
+function titleStore (state, emitter) {
+  state.title = 'Not quite set yet'
+  emitter.on('DOMContentLoaded', function () {
+    emitter.on('update', function (newTitle) {
+      state.title = newTitle
+      emitter.emit('render')
+    })
+  })
+}
