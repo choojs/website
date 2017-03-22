@@ -43,7 +43,7 @@ function Main () {
       <div class="f5 lh-copy fl w-100 vhs-flicker vhs-delay-5">
         ${tiny('tiny API')}
         ${tiny('performs well')}
-        ${tiny('5kb in size')}
+        ${tiny('4kb in size')}
         ${tiny('v impressive')}
       </div>
     </main>
