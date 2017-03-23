@@ -225,14 +225,6 @@ function Start () {
                 '$ npm install choo'
               }</code></pre>
             </article>
-            <article class="fl w-100 pr4-l mt3">
-              <h2 class="f6 f5-ns fw6 mv0 black">
-                Install the CLI
-              </h2>
-              <pre class="pre black-70 overflow-auto"><code class="code f6 dib pv2 ph3 w-100 bg-black-70 washed-green">${
-                '$ npm install choo-cli'
-              }</code></pre>
-            </article>
           </div>
         </section>
       </div>
@@ -287,7 +279,6 @@ function Footer () {
     <footer class="bg-white ph4 ph5-l pb4 pt4 pt5-l">
       <div class="f5 lh-copy fl w-100">
         ${link('Read the handbook', 'https://github.com/yoshuawuyts/choo-handbook')}
-        ${link('Install the CLI', 'https://github.com/trainyard/choo-cli')}
         ${link('Choo on GitHub', 'https://github.com/yoshuawuyts/choo')}
         ${link("Here's a twitter", 'https://twitter.com/yoshuawuyts')}
         ${link('View source', 'https://github.com/yoshuawuyts/choo-website')}
