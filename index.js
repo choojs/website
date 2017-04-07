@@ -250,7 +250,7 @@ function Sponsors () {
         </h2>
         <a href="https://opencollective.com/choo"
           class="f5 f4-ns ba no-underline br1 black-80 bg-washed-blue grow b inline-flex items-center mr3 mv3 pv2 ph3">
-          Help us pay rent 🙏
+          Support the community 🙏
         </a>
       </section>
       <div class="fl w-100 w-60-l pa3-l mt0-l">
