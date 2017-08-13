@@ -300,7 +300,7 @@ function Footer () {
           ${link('📖 Read the handbook', 'https://github.com/choojs/choo-handbook')}
           ${link('🐈 Choo on GitHub', 'https://github.com/choojs/choo')}
           ${link("🐦 Here's a twitter", 'https://twitter.com/yoshuawuyts')}
-          ${link('🔎 View source', 'https://github.com/choojs/choo-website')}
+          ${link('🔎 View source', 'https://github.com/choojs/website')}
         </div>
         <p class="b pt6 pt5-l cf lh-copy">
           <span class="fl-m">Made with 🚂 in Saigon, Tokyo, Berlin</span>
