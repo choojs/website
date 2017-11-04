@@ -251,6 +251,7 @@ function Start () {
 function Sponsors () {
   var corps = [
     [ 'Dat Project', 'https://datproject.org/' ],
+    [ 'nearForm', 'https://nearform.com' ],
     [ 'X-Team', 'https://x-team.com' ],
     [ 'Andrew Joslin', 'https://twitter.com/andrewtjoslin' ],
     [ 'Remi Nyborg', 'https://twitter.com/reminyborg' ],
