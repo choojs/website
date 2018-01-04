@@ -90,15 +90,13 @@ var gr8css = gr8({
 
 var custom = `
   html {
-    font-size: 2.5vw;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
   }
 
-  @media (max-width: 767px) {
-    html{
-      font-size: 3vw;
-    }
+  body {
+    margin: 0;
+    padding: 0;
   }
 
   .markup {
@@ -118,24 +116,16 @@ var custom = `
     font-family: ${options.fonts.mono};
   }
 
-  .copy {
-    max-width: 40rem;
-  }
-
-  .mxa {
-    margin: 0 auto;
-  }
+  .copy { max-width: 40rem }
+  .mxa { margin: 0 auto }
+  .wmx1100 { max-width: 1100px }
+  .lsn { list-style: none }
+  ul ul { margin-left: 1rem }
+  .vh90 { height: 90vh }
+  .vh75 { height: 75vh }
 
   ::selection { background: ${options.colors.pinker}; color: ${options.colors.pink}; }
   ::-moz-selection { background: ${options.colors.pinker}; color: ${options.colors.pink}; }
-
-  .lsn {
-    list-style: none;
-  }
-
-  ul ul {
-    margin-left: 1rem;
-  }
 
   .bttn {
     background: ${options.colors.white};
@@ -156,9 +146,6 @@ var custom = `
   .bb2-pinker {
     border-bottom: solid ${options.colors.pinker} 0.25rem;
   }
-
-  .vh90 { height: 90vh }
-  .vh75 { height: 75vh }
 
   .glow {
     text-shadow: 0 0 2rem ${options.colors.pink};
