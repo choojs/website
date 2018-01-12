@@ -5,9 +5,9 @@ require('./design')
 var wrapper = require('./components/wrapper')
 var app = choo()
 
-
 var site = hypha.readSiteSync('./content', {
-  parent: 'content'
+  parent: 'content',
+  file: 'index.md'
 })
 
 app.use(require('./plugins/ui'))

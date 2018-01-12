@@ -1,4 +1,7 @@
-# Routing
+title: Routing
+----
+text:
+
 Choo is built up out of two parts: stores and views. In order to render a view,
 it must be added to the application through `app.route()`. This is the router.
 

@@ -11,7 +11,7 @@ exports.colors = {
   grey_50: '#999',
   grey_75: '#666',
   black: '#111',
-  pink: '#fdd',
+  pink: '#ffe5e5',
   pinker: '#f77'
 }
 

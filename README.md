@@ -1,5 +1,4 @@
-# choo-website
-Website for choo
+<h1 align="center">choo-website</h1>
 
 ![screenshot](./screenshot.png)
 

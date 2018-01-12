@@ -18,6 +18,7 @@
     "choo": "^6.6.1",
     "choo-log": "^7.2.1",
     "dom-css": "^2.1.0",
+    "fsvw": "^1.0.1",
     "gr8": "^3.1.3",
     "markdown-it": "^8.4.0",
     "markdown-it-highlightjs": "^3.0.0",
@@ -28,7 +29,7 @@
     "ress": "^1.2.2"
   },
   "devDependencies": {
-    "bankai": "^9.1.0",
+    "bankai": "^9.2.0",
     "brfs": "^1.4.3",
     "clean-css": "^3.4.23",
     "concat-stream": "^1.6.0",

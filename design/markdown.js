@@ -261,13 +261,17 @@ module.exports = `
   }
 
   .markdown-body h2 {
-    font-size: 1em;
-    font-weight: bold;
+    color: ${options.colors.pinker};
+    font-size: 2em;
+    font-weight: normal;
+  }
+
+  .markdown-body h2:not(:first-child) {
+    margin-top: 1.5em;
   }
 
   .markdown-body h3 {
-    font-size: 1em;
-    font-weight: bold;
+    font-size: 1.5em;
     color: ${options.colors.black};
     font-weight: normal;
   }

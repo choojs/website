@@ -1,5 +1,7 @@
-var fs = require('fs')
+var fsvw = require('fsvw')
 var gr8 = require('gr8')
+var fs = require('fs')
+
 var ress = fs.readFileSync('node_modules/ress/ress.css', 'utf8')
 var options = require('./options')
 
@@ -80,7 +82,7 @@ utils.push({
 })
 
 var gr8css = gr8({
-  lineHeight: [1, 1.25, { '1-5': 1.4 }],
+  lineHeight: [1, 1.25, 1.5],
   fontSize: options.fontSize,
   spacing: options.spacing,
   utils: utils,
@@ -89,11 +91,6 @@ var gr8css = gr8({
 })
 
 var custom = `
-  html {
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-  }
-
   body {
     margin: 0;
     padding: 0;
@@ -155,27 +152,42 @@ var custom = `
     font-family: ${options.fonts.mono};
   }
 
-  @font-face {
-    font-family: 'Cinetype';
-    src: url('/assets/GT-Cinetype-Regular.woff');
-  }
-
-  @font-face {
-    font-family: 'Cinetype';
-    font-style: italic;
-    src: url('/assets/GT-Cinetype-Regular-Italic.woff');
-  }
-
-  @font-face {
-    font-family: 'Cinetype';
-    font-weight: bold;
-    src: url('/assets/GT-Cinetype-Bold.woff');
-  }
-
-  @font-face {
-    font-family: 'Cinetype Mono';
-    src: url('/assets/GT-Cinetype-Mono.woff');
-  }
+  ${typography()}
 `
 
 module.exports = ress + custom + gr8css
+
+function typography () {
+  return `
+    html {
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    ${fsvw({
+      fontSize: 100
+    })}
+
+    @font-face {
+      font-family: 'Cinetype';
+      src: url('/assets/GT-Cinetype-Regular.woff');
+    }
+
+    @font-face {
+      font-family: 'Cinetype';
+      font-style: italic;
+      src: url('/assets/GT-Cinetype-Regular-Italic.woff');
+    }
+
+    @font-face {
+      font-family: 'Cinetype';
+      font-weight: bold;
+      src: url('/assets/GT-Cinetype-Bold.woff');
+    }
+
+    @font-face {
+      font-family: 'Cinetype Mono';
+      src: url('/assets/GT-Cinetype-Mono.woff');
+    }
+  `
+}
