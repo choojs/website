@@ -6,10 +6,21 @@ module.exports = wrapper(main)
 
 function main (state, emit) {
   return html`
-    <div class="w100 wmx1100 mxa">
-      <div class="p1">
-        <div>${state.page.title}</div>
-        <div class="markdown-body">${format(state.page.text)}</div>
+    <div>
+      <div class="bgc-pinker fc-pink vhmn50 x xdc xjb">
+        <div></div>
+        <div class="w100 wmx1100 mxa">
+          <div class="p0-5 fs4 lh1">
+            <span>Choo / </span> ${state.page.title}
+          </div>
+        </div>
+      </div>
+      <div class="w100 wmx1100 mxa">
+        <div class="p0-5">
+          <div class="p0-5">
+            <div class="markdown-body">${format(state.page.text)}</div>
+          </div>
+        </div>
       </div>
     </div>
   `

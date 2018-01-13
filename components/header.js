@@ -48,7 +48,7 @@ module.exports = class Header extends Nanocomponent {
     }
 
     return html`
-      <div class="h100 w100 bgc-black psr oh curd usn">
+      <div class="h100 w100 bgc-pinker psr oh curd usn">
         ${content}
       </div>
     `
@@ -113,8 +113,10 @@ module.exports = class Header extends Nanocomponent {
     }
 
     var classList = props.invert
-      ? 'bgc-pink fc-black'
-      : 'bgc-black fc-pink'
+      ? 'bgc-pink fc-pinker'
+      : 'bgc-pinker fc-pink'
+
+    if (props.ignore) classList = 'bgc-pink fc-black'
 
     var el = html`
       <div
