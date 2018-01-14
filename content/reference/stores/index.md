@@ -1,5 +1,11 @@
 title: Stores
 ----
+excerpt:
+
+Stores are Choo's data abstraction. They're meant to both hold application
+data, and listen for events to change it. In traditional systems this is
+sometimes also known as "models".
+----
 text:
 
 Stores are Choo's data abstraction. They're meant to both hold application

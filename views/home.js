@@ -93,15 +93,15 @@ function support (props) {
   return html`
     <div class="x xw">
       <div class="c12 x xac xw">
-        <div class="c12 p1 pb0 fs2 lh1-25 markdown-body">
-          ${format(props.text)}
-        </div>
         <div class="c12 p1">
           <a
             href="${props.link}"
             target="_blank"
             class="psr fs2 bttn tdn db p0-5 tac"
           >Support the community</a>
+        </div>
+        <div class="c12 p1 pt0 fs2 lh1-25 markdown-body">
+          ${format(props.text)}
         </div>
       </div>
     </div>

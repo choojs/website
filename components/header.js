@@ -116,7 +116,7 @@ module.exports = class Header extends Nanocomponent {
       ? 'bgc-pink fc-pinker'
       : 'bgc-pinker fc-pink'
 
-    if (props.ignore) classList = 'bgc-pink fc-black'
+    if (props.ignore) classList = 'bgc-white fc-black'
 
     var el = html`
       <div

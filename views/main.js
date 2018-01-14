@@ -10,8 +10,8 @@ function main (state, emit) {
       <div class="bgc-pinker fc-pink vhmn50 x xdc xjb">
         <div></div>
         <div class="w100 wmx1100 mxa">
-          <div class="p0-5 fs4 lh1">
-            <span>Choo / </span> ${state.page.title}
+          <div class="p1 fs4 lh1">
+            ${state.page.title}
           </div>
         </div>
       </div>

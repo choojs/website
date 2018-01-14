@@ -1,4 +1,3 @@
-var fsvw = require('fsvw')
 var gr8 = require('gr8')
 var fs = require('fs')
 
@@ -170,9 +169,21 @@ function typography () {
       -webkit-text-size-adjust: 100%;
     }
 
-    ${fsvw({
-      fontSize: 100
-    })}
+    html {
+      font-size: calc(1.25vw + 62.50%);
+    }
+
+    @media (max-width: 767px) {
+      html {
+        font-size: calc(1.75vw + 62.50%)
+      }
+    }
+
+    @media (min-width: 1100px) {
+      html {
+        font-size: 155%
+      }
+    }
 
     @font-face {
       font-family: 'Cinetype';

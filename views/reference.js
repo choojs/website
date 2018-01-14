@@ -11,24 +11,78 @@ function view (state, emit) {
   })
 
   return html`
-    <div class="w100 wmx1100 mxa">
-      <div class="p0-5">
-        <div class="p0-5 fs4 lh1">
-          <span class="fc-pinker">Choo / </span>
+    <div>
+      <div class="x p0-5 fs2 lh1">
+        <div class="tac p0-5">
           ${state.page.title}
         </div>
-        <div>
-          ${pages.map(renderPage)}
-        </div>
+      </div>
+      <div class="x xx xw w100 wmx1100 mxa">
+        ${renderPages(pages)}
       </div>
     </div>
   `
 
-  function renderPage (props) {
+  function renderPage (props, i, arr) {
     return html`
-      <div class="p0-5 fs2">
-        <a href="${props.url}">${props.title}</a>
-      </div>
+      <a class="xx x xjc xac fs2 bb0 p1 c12 psr tdn" href="${props.url}">
+        ${props.title}
+        ${(i < arr.length - 1)
+          ? html`
+            <div class="psa b0 l0 r0 mx1">
+              <div class="c12 bb2-black"></div>
+            </div>
+          `
+          : ''
+        }
+      </a>
     `
   }
+}
+
+function renderPages (features) {
+  features = features || [ ] 
+  return features.reduce(function (result, active, i, arr) {
+    result.push(html`
+      <a href="${active.url}" class="c12 sm-c6 px1 py2 tdn psr">
+        ${i % 2 === 0 ? lineVert() : ''}
+        <div class="fs2 fc-pinker lh1 mb1">
+          ${active.title}
+        </div>
+        <div class="markdown-body">
+          ${format(active.excerpt)}
+        </div>
+      </a>
+    `)
+
+    if (i < arr.length - 1) {
+      result.push(lineHorizMobile())
+    }
+
+    if ((i + 1) % 2 === 0 && i < arr.length - 1) {
+      result.push(lineHoriz())
+    }
+
+    return result
+  }, [ ])
+}
+
+function lineVert () {
+  return html`<div class="c12 psa t0 r0 b0 dn sm-db my1 br2-black"></div>`
+}
+
+function lineHorizMobile () {
+  return html`
+    <div class="px1 c12 db sm-dn">
+      <div class="c12 bb2-black"></div>
+    </div>
+  `
+}
+
+function lineHoriz () {
+  return html`
+    <div class="c12 px1 dn sm-db">
+      <div class="c12 bb2-black"></div>
+    </div>
+  `
 }

@@ -1,5 +1,10 @@
 title: Views
 ----
+excerpt:
+
+Views are Choo's rendering abstraction. It's the part that takes the internal
+state and renders elements to the DOM.
+----
 text:
 
 Views are Choo's rendering abstraction. It's the part that takes the internal
