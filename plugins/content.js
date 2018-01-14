@@ -15,7 +15,7 @@ function store (site) {
 
     objectKeys(site).forEach(function (path) {
       var page = site[path] || { }
-      var view = views[page.view] || views.home
+      var view = views[page.view] || views.main
       state.content[page.url] = page
 
       app.route(page.url, function (state, emit) {

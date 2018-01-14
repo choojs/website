@@ -261,13 +261,17 @@ module.exports = `
   }
 
   .markdown-body h2 {
-    font-size: 1em;
-    font-weight: bold;
+    color: ${options.colors.pinker};
+    font-size: 2em;
+    font-weight: normal;
+  }
+
+  .markdown-body h2:not(:first-child) {
+    margin-top: 1.5em;
   }
 
   .markdown-body h3 {
-    font-size: 1em;
-    font-weight: bold;
+    font-size: 1.5em;
     color: ${options.colors.black};
     font-weight: normal;
   }
@@ -441,7 +445,6 @@ module.exports = `
     background-color: #fafbfc;
     border: solid 1px #c6cbd1;
     border-bottom-color: #959da5;
-    border-radius: 3px;
     box-shadow: inset 0 -1px 0 #959da5;
   }
 
@@ -574,7 +577,6 @@ module.exports = `
     padding: 0 0.1em;
     margin: 0 -0.1em;
     background-color: ${options.colors.white};
-    border-radius: 3px;
   }
 
   .markdown-body code::before,
@@ -611,7 +613,6 @@ module.exports = `
     overflow: auto;
     line-height: 1.5;
     background-color: ${options.colors.white};
-    border-radius: 0.5rem;
   }
 
   .markdown-body pre code {
@@ -646,7 +647,6 @@ module.exports = `
     background-color: #fafbfc;
     border: solid 1px #d1d5da;
     border-bottom-color: #c6cbd1;
-    border-radius: 3px;
     box-shadow: inset 0 -1px 0 #c6cbd1;
   }
 

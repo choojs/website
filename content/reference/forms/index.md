@@ -1,4 +1,14 @@
-# forms
+title: Forms
+----
+excerpt:
+
+Websites generally consist of 3 main elements: paragraph text, lists and forms.
+While paragraph text is generally straight forward to place on a page, lists &
+forms require some more work. This section explains everything you need to know
+to work with forms in Choo.
+----
+text:
+
 Websites generally consist of 3 main elements: paragraph text, lists and forms.
 While paragraph text is generally straight forward to place on a page, lists &
 forms require some more work. This section explains everything you need to know

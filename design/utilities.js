@@ -1,5 +1,6 @@
-var fs = require('fs')
 var gr8 = require('gr8')
+var fs = require('fs')
+
 var ress = fs.readFileSync('node_modules/ress/ress.css', 'utf8')
 var options = require('./options')
 
@@ -49,6 +50,12 @@ utils.push({
 })
 
 utils.push({
+  prop: { vhmn: 'max-height'},
+  unit: 'vh',
+  vals: [0, 50, 100]
+})
+
+utils.push({
   prop: { vmx: 'max-height'},
   unit: '%',
   vals: [0, 100]
@@ -80,7 +87,7 @@ utils.push({
 })
 
 var gr8css = gr8({
-  lineHeight: [1, 1.25, { '1-5': 1.4 }],
+  lineHeight: [1, 1.25, 1.5],
   fontSize: options.fontSize,
   spacing: options.spacing,
   utils: utils,
@@ -89,16 +96,9 @@ var gr8css = gr8({
 })
 
 var custom = `
-  html {
-    font-size: 2.5vw;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-  }
-
-  @media (max-width: 767px) {
-    html{
-      font-size: 3vw;
-    }
+  body {
+    margin: 0;
+    padding: 0;
   }
 
   .markup {
@@ -118,24 +118,16 @@ var custom = `
     font-family: ${options.fonts.mono};
   }
 
-  .copy {
-    max-width: 40rem;
-  }
-
-  .mxa {
-    margin: 0 auto;
-  }
+  .copy { max-width: 40rem }
+  .mxa { margin: 0 auto }
+  .wmx1100 { max-width: 1100px }
+  .lsn { list-style: none }
+  ul ul { margin-left: 1rem }
+  .vh90 { height: 90vh }
+  .vh75 { height: 75vh }
 
   ::selection { background: ${options.colors.pinker}; color: ${options.colors.pink}; }
   ::-moz-selection { background: ${options.colors.pinker}; color: ${options.colors.pink}; }
-
-  .lsn {
-    list-style: none;
-  }
-
-  ul ul {
-    margin-left: 1rem;
-  }
 
   .bttn {
     background: ${options.colors.white};
@@ -157,9 +149,6 @@ var custom = `
     border-bottom: solid ${options.colors.pinker} 0.25rem;
   }
 
-  .vh90 { height: 90vh }
-  .vh75 { height: 75vh }
-
   .glow {
     text-shadow: 0 0 2rem ${options.colors.pink};
   }
@@ -168,27 +157,54 @@ var custom = `
     font-family: ${options.fonts.mono};
   }
 
-  @font-face {
-    font-family: 'Cinetype';
-    src: url('/assets/GT-Cinetype-Regular.woff');
-  }
-
-  @font-face {
-    font-family: 'Cinetype';
-    font-style: italic;
-    src: url('/assets/GT-Cinetype-Regular-Italic.woff');
-  }
-
-  @font-face {
-    font-family: 'Cinetype';
-    font-weight: bold;
-    src: url('/assets/GT-Cinetype-Bold.woff');
-  }
-
-  @font-face {
-    font-family: 'Cinetype Mono';
-    src: url('/assets/GT-Cinetype-Mono.woff');
-  }
+  ${typography()}
 `
 
 module.exports = ress + custom + gr8css
+
+function typography () {
+  return `
+    html {
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    html {
+      font-size: calc(1.25vw + 62.50%);
+    }
+
+    @media (max-width: 767px) {
+      html {
+        font-size: calc(1.75vw + 62.50%)
+      }
+    }
+
+    @media (min-width: 1100px) {
+      html {
+        font-size: 155%
+      }
+    }
+
+    @font-face {
+      font-family: 'Cinetype';
+      src: url('/assets/GT-Cinetype-Regular.woff');
+    }
+
+    @font-face {
+      font-family: 'Cinetype';
+      font-style: italic;
+      src: url('/assets/GT-Cinetype-Regular-Italic.woff');
+    }
+
+    @font-face {
+      font-family: 'Cinetype';
+      font-weight: bold;
+      src: url('/assets/GT-Cinetype-Bold.woff');
+    }
+
+    @font-face {
+      font-family: 'Cinetype Mono';
+      src: url('/assets/GT-Cinetype-Mono.woff');
+    }
+  `
+}

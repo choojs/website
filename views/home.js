@@ -18,48 +18,49 @@ function view (state, emit) {
           ${page.subtitle} ↓
         </div>
       </div>
-      <div class="px1">
-        <div class="c12 bb2-black"></div>
-      </div>
-      <div class="x xw p0-5">
-        <div class="c12 sm-c8 p0-5">
-          <div class="markdown-body">
-            ${format(page.text)}
+      <div class="w100 wmx1100 mxa">
+        <div class="px1">
+          <div class="c12 bb2-black"></div>
+        </div>
+        <div class="x xw p0-5">
+          <div class="c12 sm-c8 p0-5">
+            <div class="markdown-body">
+              ${format(page.text)}
+            </div>
+          </div>
+          <div class="x psr p0-5 c12 sm-c4">
+            ${demo(state.content.demo)}
           </div>
         </div>
-        <div class="x psr p0-5 c12 sm-c4">
-          ${demo(state.content.demo)}
+        <div class="px1">
+          <div class="c12 bb2-black"></div>
         </div>
-      </div>
-      <div class="px1">
-        <div class="c12 bb2-black"></div>
-      </div>
-      <div class="c12 x p0-5">
-        <div class="c6 p0-5">
-          <input
-            type="text"
-            value="npm i choo"
-            class="w100 psr fs2 bttn db tac"
-            onclick=${selectText}
-          />
+        <div class="c12 x p0-5">
+          <div class="c6 p0-5">
+            <input
+              type="text"
+              value="npm i choo"
+              class="w100 psr fs2 bttn db tac"
+              onclick=${selectText}
+            />
+          </div>
+          <div class="c6 p0-5">
+            <a
+              href="https://github.com/choojs/choo"
+              class="w100 psr fs2 bttn db tac"
+            >Repository</a>
+          </div>
+        </div> 
+        ${lineHoriz()}
+        <div class="x xw">
+          ${createFeatures(page.features)}
         </div>
-        <div class="c6 p0-5">
-          <a
-            href="https://github.com/choojs/choo"
-            class="w100 psr fs2 bttn db tac"
-          >Repository</a>
-        </div>
-      </div> 
-      ${lineHoriz()}
-      <div class="x xw">
-        ${createFeatures(page.features)}
+        ${lineHoriz()}
+        ${support({
+          link: page.supportlink,
+          text: page.support
+        })}
       </div>
-      ${lineHoriz()}
-      ${support({
-        link: page.supportlink,
-        text: page.support
-      })}
-      ${footer(page.footer)}
     </div>
   `
 }
@@ -70,7 +71,7 @@ function createFeatures (features) {
     result.push(html`
       <div class="c12 sm-c6 p1 psr">
         ${i % 2 === 0 ? lineVert() : ''}
-        <div class="fs2 lh1 mb1">
+        <div class="fs2 fc-pinker lh1 mb1">
           ${active.title}
         </div>
         <div class="markdown-body">
@@ -92,15 +93,15 @@ function support (props) {
   return html`
     <div class="x xw">
       <div class="c12 x xac xw">
-        <div class="c12 p1 pb0 fs2 lh1-25">
-          ${format(props.text)}
-        </div>
         <div class="c12 p1">
           <a
             href="${props.link}"
             target="_blank"
             class="psr fs2 bttn tdn db p0-5 tac"
           >Support the community</a>
+        </div>
+        <div class="c12 p1 pt0 fs2 lh1-25 markdown-body">
+          ${format(props.text)}
         </div>
       </div>
     </div>
@@ -123,19 +124,6 @@ function lineHoriz () {
   return html`
     <div class="px1">
       <div class="c12 bb2-black"></div>
-    </div>
-  `
-}
-
-function footer (text) {
-  if (!text) return
-  return html`
-    <div class="bgc-black fc-pink p0-5">
-      <div class="p0-5">
-        ${text.map(function (line) {
-          return html`<div>${line}</div>`
-        })}
-      </div>
     </div>
   `
 }
