@@ -1,38 +1,36 @@
-var wrapper = require('../components/wrapper')
 var objectValues = require('object-values')
+var wrapper = require('../components/wrapper')
 var format = require('../components/format')
 var html = require('choo/html')
 
-module.exports = wrapper(main)
+module.exports = wrapper(view)
 
-function main (state, emit) {
-  var pages = objectValues(state.content['/reference'].pages).map(function (child) {
+function view (state, emit) {
+  var pages = objectValues(state.page.pages).map(function (child) {
     return state.content[child.url]
   })
 
   return html`
     <div>
-      <div class="bgc-pinker fc-pink vhmn50 x xdc xjb">
-        <div></div>
-        <div class="w100 wmx1100 mxa">
-          <div class="p1 fs4 lh1">
-            ${state.page.title}
-          </div>
-        </div>
+      <div class="x xx xw w100 wmx1100 mxa">
+        ${renderPages(pages)}
       </div>
-      <div class="w100 wmx1100 mxa p1">
-        <div class="markdown-body copy-content">${format(state.page.text)}</div>
-      </div>
-      ${lineHoriz()}
-      ${renderFooter()}
     </div>
   `
 
-  function renderFooter () {
+  function renderPage (props, i, arr) {
     return html`
-      <div class="x xw w100">
-        ${renderPages(pages)} 
-      </div>
+      <a class="xx x xjc xac fs2 bb0 p1 c12 psr tdn" href="${props.url}">
+        ${props.title}
+        ${(i < arr.length - 1)
+          ? html`
+            <div class="psa b0 l0 r0 mx1">
+              <div class="c12 bb2-black"></div>
+            </div>
+          `
+          : ''
+        }
+      </a>
     `
   }
 }

@@ -13,8 +13,8 @@ function store (site) {
     state.content = { }
     state.content.demo = demo
 
-    objectKeys(site).forEach(function (path) {
-      var page = site[path] || { }
+    objectKeys(site).forEach(function (href) {
+      var page = site[href] || { }
       var view = views[page.view] || views.main
       state.content[page.url] = page
 
@@ -22,5 +22,11 @@ function store (site) {
         return view(xtend(state, { page: page }), emit)
       })
     })
+
+    // ui opts
+    try {
+      state.content['/'].navPlaceholder = false
+      state.content['/reference'].navBorder = true
+    } catch (err) { }
   }
 }
