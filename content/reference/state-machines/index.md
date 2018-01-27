@@ -4,6 +4,7 @@ view: reference
 ----
 excerpt:
 State machines are a great way to manage different states in your application.
+In this section we'll learn how to use and implement state machines.
 ----
 text:
 If you work in software long enough, you'll have to deal with legacy codebases.
