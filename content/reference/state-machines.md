@@ -1,4 +1,11 @@
-# state machines
+title: State Machines
+----
+view: reference
+----
+excerpt:
+State machines are a great way to manage different states in your application.
+----
+text:
 If you work in software long enough, you'll have to deal with legacy codebases.
 but you'll also have had the chance to start projects from scratch. And
 eventually you'll see your project become a legacy codebase itself.
