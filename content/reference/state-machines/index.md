@@ -157,11 +157,6 @@ machine.transition('timer')
 console.log(machine.state) // => 'green'
 ```
 
-## Applying State Machines to User Interfaces
-So far we've seen how to create state machines for traffic lights. But we said
-we'd explain how to use them for User Interfaces!
-
-
 ## Wrapping Up
 And that's all it takes to implement a fully functional state machine. As you
 can see there's not much code to it.
