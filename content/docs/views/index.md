@@ -220,18 +220,18 @@ As applications grow, you'll probably find that there will be plenty of views
 that share a lot of the same layout. If you find that you're repeating the same
 layout in a lot of code, it can be beneficial to make it reusable instead.
 
-The most common way to create reusable templates, is to create a function that
+The most common way to create reusable templates is to create a function that
 takes a view as an argument and returns a view. Inside the function the
 childView is called, and wrapped with some HTML. The end result is a nicely
 composed function that's also known as a "composable view", "higher order view",
-"template".
+or "template".
 
 This might sound a little abstract. So let's create an example higher order
 view, which has a static header and footer, but takes the content as an
 argument.
 
-_note: There's not an exact word for what we're doing here. Because it's a
-pattern, and not an API the exact word also doesn't matter too much. This is
+_note: There's not an exact term for what we're doing here. Because it's a
+pattern, and not an API the exact term also doesn't matter too much. This is
 also not at all the only way to compose functions - so don't worry too much
 about getting the terminology right - we're also just making it up as we go._
 
@@ -240,12 +240,12 @@ var html = require('choo/html')
 var choo = require('choo')
 
 var app = choo()
-app.route('/', template(main))                 // 1.
-app.route('/bar', template(bar))               // 2.
+app.route('/', template(main))
+app.route('/bar', template(bar))
 app.mount('body')
 
-function template (childView) {                // 3.
-  return (state, emit) => {                    // 4.
+function template (childView) {                // 1.
+  return (state, emit) => {                    // 2.
     return html`
       <body>
         <header>This is the header</header>
@@ -256,27 +256,21 @@ function template (childView) {                // 3.
   }
 }
 
-function main (state, emit) {                  // 5.
+function main (state, emit) {
   return html`
     <h1>I'm the main view</h1>
   `
 }
 
-function foo (state, emit) {                   // 6.
+function foo (state, emit) {
   return html`
     <h1>fooooooooooo view</h1>
   `
 }
 ```
 
-1. We create a route `'/'` which calls the `template` function, and passes it
-   the `main` view function.
-2. We create a route `'/foo'` which calls the `template` function, and passes it
-   the `foo` view function.
-3. This is where the bulk of the action happens. We create a function named
+1. This is where the bulk of the action happens. We create a function named
    `'template'` which takes a view as an argument (`childView`).
-4. The `'template'` function returns another function. This is the function
+2. The `'template'` function returns another function. This is the function
    we'll be passing to `app.route()`. It's a valid view. When the view is
    called, it calls the `childView`, and wraps it with DOM elements.
-5. We define a view named `'main'`.
-6. We define a view named `'foo'`.
