@@ -220,6 +220,15 @@ As applications grow, you'll probably find that there will be plenty of views
 that share a lot of the same layout. If you find that you're repeating the same
 layout in a lot of code, it can be beneficial to make it reusable instead.
 
+The easiest way to create a reusable view in Choo is to create a function that
+takes a view (meaning a snippet of HTML) and then inserts it into another,
+internal view. This makes it easy to create functions that construct HTML that
+you always want to keep static, such as a menu bar.  But at the same time
+construct dynamic HTML defined by whatever you pass it as an argument.
+
+Functions like these are called "composable functions" and coincidentally happen
+to be a fundamental piece of functional programming!
+
 The most common way to create reusable templates is to create a function that
 takes a view as an argument and returns a view. Inside the function the
 childView is called, and wrapped with some HTML. The end result is a nicely
