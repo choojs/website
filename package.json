@@ -36,7 +36,6 @@
     "hyperstream": "^1.2.2",
     "hypha": "^0.4.5",
     "minify-html-stream": "^0.3.1",
-    "purify-css": "^1.1.9",
     "standard": "^14.3.1"
   }
 }
